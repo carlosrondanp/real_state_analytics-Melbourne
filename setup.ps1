@@ -85,7 +85,7 @@ Install-And-Log -packageName "pandas"
 # === CONFIGURACIÓN INICIAL ===
 $usuario = "carlosrondanp"
 $correo = "carlos.rondan.p@uni.pe"
-$comentario = "fix setup.ps1"
+$comentario = "fix setup.ps1 22"
 $repo_name = "real_state_analytics-Melbourne"
 
 # === TOKEN DESDE VARIABLE DE ENTORNO ===
