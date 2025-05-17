@@ -118,4 +118,4 @@ git push --force origin master
 
 
 # == GUARDAR CREDENCIALES
-git config --global credential.helper store
+#git config --global credential.helper store
