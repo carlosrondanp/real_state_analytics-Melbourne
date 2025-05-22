@@ -75,7 +75,7 @@ function Install-And-Log {
 # ----------------------------------------
 Write-Host "🔹 Recargando perfil..."
 . $profile
-Install-And-Log -packageName "pandas"
+Install-And-Log -packageName "psycopg2"
 
 # ================================================
 # Configuración de GitHub
@@ -85,7 +85,7 @@ Install-And-Log -packageName "pandas"
 # === CONFIGURACIÓN INICIAL ===
 $usuario = $env:usuario
 $correo = $env:correo
-$comentario = "fix setup.ps1 22"
+$comentario = "creación BD del proyecto RAW"
 $repo_name = "real_state_analytics-Melbourne"
 
 # === TOKEN DESDE VARIABLE DE ENTORNO ===
@@ -119,3 +119,8 @@ git push --force origin master
 
 # == GUARDAR CREDENCIALES
 #git config --global credential.helper store
+
+
+# === DOCKER ===
+# Extensión para VSC
+#code --install-extension ms-vscode-remote.remote-wsl
