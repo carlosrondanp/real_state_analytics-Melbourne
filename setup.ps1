@@ -85,7 +85,7 @@ Install-And-Log -packageName "psycopg2"
 # === CONFIGURACIÓN INICIAL ===
 $usuario = $env:usuario
 $correo = $env:correo
-$comentario = "creación BD del proyecto RAW"
+$comentario = "inicio de limpieza de datos"
 $repo_name = "real_state_analytics-Melbourne"
 
 # === TOKEN DESDE VARIABLE DE ENTORNO ===
