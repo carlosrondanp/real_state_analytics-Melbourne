@@ -85,7 +85,7 @@ Install-And-Log -packageName "psycopg2"
 # === CONFIGURACIÓN INICIAL ===
 $usuario = $env:usuario
 $correo = $env:correo
-$comentario = "inicio de limpieza de datos"
+$comentario = "updated query limpieza"
 $repo_name = "real_state_analytics-Melbourne"
 
 # === TOKEN DESDE VARIABLE DE ENTORNO ===

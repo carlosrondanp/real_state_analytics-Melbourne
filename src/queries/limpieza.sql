@@ -47,11 +47,9 @@ select *
  where 1 = 1
    and "Bathroom" is null
    and "Landsize" is null
+ limit 100
 
    
 -- 27,244
 -- area construida nula : 16,588
 -- area construida no bula : 10,656
-
-
- 
