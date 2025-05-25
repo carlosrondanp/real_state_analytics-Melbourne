@@ -26,6 +26,7 @@ python -m virtualenv $venvPath --python="C:\Program Files\Python312\python.exe"
 
 # 4. Activación del entorno virtual
 # --------------------------------
+$venvPath = "intro_venv"
 Write-Host "🔹 Activando entorno virtual..."
 & ".\$venvPath\Scripts\activate.ps1"
 
@@ -85,7 +86,7 @@ Install-And-Log -packageName "psycopg2"
 # === CONFIGURACIÓN INICIAL ===
 $usuario = $env:usuario
 $correo = $env:correo
-$comentario = "updated query limpieza"
+$comentario = "actualizacion 25/05/2025"
 $repo_name = "real_state_analytics-Melbourne"
 
 # === TOKEN DESDE VARIABLE DE ENTORNO ===

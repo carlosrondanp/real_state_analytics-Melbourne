@@ -2,3 +2,4 @@ pandas==2.2.3
 numpy==2.2.5
 psycopg2==2.9.10
 SQLAlchemy==2.0.41
+seaborn==0.13.2
