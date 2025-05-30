@@ -76,7 +76,7 @@ function Install-And-Log {
 # ----------------------------------------
 Write-Host "🔹 Recargando perfil..."
 . $profile
-Install-And-Log -packageName "psycopg2"
+Install-And-Log -packageName "osmnx"
 
 # ================================================
 # Configuración de GitHub
@@ -86,7 +86,7 @@ Install-And-Log -packageName "psycopg2"
 # === CONFIGURACIÓN INICIAL ===
 $usuario = $env:usuario
 $correo = $env:correo
-$comentario = "actualizacion 25/05/2025"
+$comentario = "actualizacion 30/05/2025"
 $repo_name = "real_state_analytics-Melbourne"
 
 # === TOKEN DESDE VARIABLE DE ENTORNO ===
