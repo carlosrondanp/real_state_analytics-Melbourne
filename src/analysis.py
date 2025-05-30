@@ -1,3 +1,49 @@
+def analyze_outliers_mixed_data(df, numerical_cols, categorical_cols, contamination=0.05, plot=True):
+    from sklearn.preprocessing import StandardScaler
+    from sklearn.ensemble import IsolationForest
+    from prince import FAMD
+    import matplotlib.pyplot as plt
+  
+    # Copiar datos originales
+    data = df[numerical_cols + categorical_cols].copy()
+
+    scaler = StandardScaler()
+    data[numerical_cols] = scaler.fit_transform(data[numerical_cols])
+
+    # Preparar los datos combinados
+    data_encoded = data[numerical_cols + categorical_cols]
+
+    # Aplicar FAMD (Factor Analysis of Mixed Data)
+    famd = FAMD(n_components=2, random_state=42)
+    famd_result = famd.fit_transform(data_encoded)
+
+    # Isolation Forest para detectar outliers
+    iso_forest = IsolationForest(
+        contamination=contamination,
+        n_estimators=100,
+        max_samples=0.5,
+        max_features=0.8,
+        random_state=42
+    )
+    data['Outlier'] = iso_forest.fit_predict(famd_result)
+
+    # Crear gráficos
+    if plot:
+        plt.figure(figsize=(10, 6))
+        plt.scatter(famd_result.iloc[:, 0], famd_result.iloc[:, 1], c=data['Outlier'], cmap='bwr', s=20)
+        plt.title('Proyección FAMD: Detección de Outliers con Isolation Forest')
+        plt.xlabel('FAMD Componente 1')
+        plt.ylabel('FAMD Componente 2')
+        plt.colorbar(label='Outlier (-1: Sí, 1: No)')
+        plt.show()
+
+    # Filtrar outliers
+    cleaned_data = df[data['Outlier'] == 1]
+
+    print(f"Outliers detectados y eliminados: {len(df) - len(cleaned_data)}")
+    return cleaned_data, scaler, famd, iso_forest
+
+
 import numpy as np
 import pandas as pd
 import seaborn as sns
