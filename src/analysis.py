@@ -117,3 +117,67 @@ def analisis_variables_numericas_continuo(data, target):
 
     plt.show()
     display(pd.DataFrame(resumen))
+
+
+
+
+import json
+def winsorize_dataframe(df, numerical_cols, lower_pct=0.01, upper_pct=0.995, save_path=None):
+    """
+    Aplica winsorización a columnas numéricas y opcionalmente guarda los cortes en un JSON.
+
+    Parámetros:
+    - df: DataFrame original
+    - numerical_cols: lista de columnas numéricas
+    - lower_pct: percentil inferior (por defecto 1%)
+    - upper_pct: percentil superior (por defecto 99%)
+    - save_path: ruta del archivo .json para guardar los cortes (opcional)
+
+    Retorna:
+    - df_winsorized: DataFrame con winsorización aplicada
+    - cutoffs: diccionario con percentiles por columna
+    """
+    df_winsorized = df.copy()
+    cutoffs = {}
+
+    for col in numerical_cols:
+        lower = df[col].quantile(lower_pct)
+        upper = df[col].quantile(upper_pct)
+        cutoffs[col] = {'lower': lower, 'upper': upper}
+        df_winsorized[col] = df[col].clip(lower=lower, upper=upper)
+
+    if save_path:
+        with open(save_path, 'w') as f:
+            json.dump(cutoffs, f, indent=4)
+        print(f"Cortes guardados en: {save_path}")
+
+    return df_winsorized, cutoffs
+
+
+def apply_winsorization_from_json(df, numerical_cols, json_path):
+    """
+    Aplica winsorización a un nuevo DataFrame usando cortes guardados en un archivo JSON.
+
+    Parámetros:
+    - df: DataFrame a transformar
+    - numerical_cols: columnas numéricas a winsorizar
+    - json_path: ruta del archivo JSON con los cortes guardados
+
+    Retorna:
+    - df_winsorized: DataFrame con winsorización aplicada
+    """
+    # Cargar los cortes desde el archivo JSON
+    with open(json_path, 'r') as f:
+        cutoffs = json.load(f)
+
+    df_winsorized = df.copy()
+
+    for col in numerical_cols:
+        if col in cutoffs:
+            lower = cutoffs[col]['lower']
+            upper = cutoffs[col]['upper']
+            df_winsorized[col] = df[col].clip(lower=lower, upper=upper)
+        else:
+            print(f"Advertencia: La columna '{col}' no está en el archivo de cortes.")
+
+    return df_winsorized

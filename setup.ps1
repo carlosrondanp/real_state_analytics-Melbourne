@@ -86,7 +86,7 @@ Install-And-Log -packageName "osmnx"
 # === CONFIGURACIÓN INICIAL ===
 $usuario = $env:usuario
 $correo = $env:correo
-$comentario = "actualizacion 30/05/2025 part2"
+$comentario = "actualizacion 30/05/2025 part4"
 $repo_name = "real_state_analytics-Melbourne"
 
 # === TOKEN DESDE VARIABLE DE ENTORNO ===
