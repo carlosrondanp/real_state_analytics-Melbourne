@@ -76,7 +76,7 @@ function Install-And-Log {
 # ----------------------------------------
 Write-Host "🔹 Recargando perfil..."
 . $profile
-Install-And-Log -packageName "osmnx"
+Install-And-Log -packageName "selenium"
 
 # ================================================
 # Configuración de GitHub

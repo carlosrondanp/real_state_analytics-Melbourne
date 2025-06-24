@@ -7,3 +7,6 @@ osmnx==2.0.3
 openpyxl==3.1.5
 pingouin==0.5.5
 prince==0.16.0
+selenium==4.33.0
+webdriver-manager==4.0.2
+lxml==5.4.0
