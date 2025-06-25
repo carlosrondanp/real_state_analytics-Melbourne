@@ -10,3 +10,10 @@ prince==0.16.0
 selenium==4.33.0
 webdriver-manager==4.0.2
 lxml==5.4.0
+scikit-learn==1.6.1tqdm==4.67.1
+h3==4.3.0
+h3pandas==0.3.0
+folium==0.20.0
+optuna==4.4.0
+lightgbm==4.6.0
+shap==0.48.0

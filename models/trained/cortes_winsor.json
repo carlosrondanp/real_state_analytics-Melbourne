@@ -1,66 +1,38 @@
 {
-    "Rooms": {
+    "habitaciones": {
         "lower": 1.0,
         "upper": 7.0
     },
-    "Distance": {
+    "distancia_centro_km": {
         "lower": 1.9,
-        "upper": 31.7
+        "upper": 38.0
     },
-    "Bedroom2": {
-        "lower": 1.0,
-        "upper": 7.0
-    },
-    "Bathroom": {
-        "lower": 1.0,
-        "upper": 5.0
-    },
-    "Car": {
-        "lower": 0.0,
-        "upper": 7.927000000003318
-    },
-    "Landsize": {
-        "lower": 0.6931471805599453,
-        "upper": 9.550392622705143
-    },
-    "Propertycount": {
-        "lower": 852.0,
+    "nro_prop_en_suburbio": {
+        "lower": 984.0,
         "upper": 21650.0
-    },
-    "Comercio y servicios": {
-        "lower": 0.0,
-        "upper": 361.85400000000664
-    },
-    "Restauraci\u00f3n y vida social": {
-        "lower": 0.0,
-        "upper": 213.70800000001327
-    },
-    "Transporte y conectividad": {
-        "lower": 0.0,
-        "upper": 148.0
-    },
-    "Cultura y recreaci\u00f3n": {
-        "lower": 0.0,
-        "upper": 21.0
-    },
-    "Financiero": {
-        "lower": 0.0,
-        "upper": 16.0
-    },
-    "Espiritual y comunitario": {
-        "lower": 0.0,
-        "upper": 10.0
-    },
-    "Salud": {
-        "lower": 0.0,
-        "upper": 17.0
-    },
-    "Educaci\u00f3n": {
-        "lower": 0.0,
-        "upper": 8.0
     },
     "dif_fechas": {
         "lower": 0.0,
-        "upper": 4.98993429132862
+        "upper": 145.68400000000838
+    },
+    "x": {
+        "lower": -38.0400777,
+        "upper": -37.5665882224
+    },
+    "y": {
+        "lower": 144.658923101,
+        "upper": 145.320891007
+    },
+    "m2": {
+        "lower": 92.0,
+        "upper": 5742.9690000001865
+    },
+    "cluster_geo": {
+        "lower": 0.0,
+        "upper": 0.0
+    },
+    "hex_id": {
+        "lower": 1360.0,
+        "upper": 8589.0
     }
 }
