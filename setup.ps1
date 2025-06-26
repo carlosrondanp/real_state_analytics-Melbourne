@@ -86,7 +86,7 @@ Install-And-Log -packageName "selenium"
 # === CONFIGURACIÓN INICIAL ===
 $usuario = $env:usuario
 $correo = $env:correo
-$comentario = "actualizacion 25/06/2025"
+$comentario = "add readme"
 $repo_name = "real_state_analytics-Melbourne"
 
 # === TOKEN DESDE VARIABLE DE ENTORNO ===
